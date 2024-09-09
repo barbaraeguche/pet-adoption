@@ -1,6 +1,7 @@
+require('dotenv').config();
 
 //crucial
-const port = 5195;
+// const port = 5195;
 const path = require('path');
 const multer = require('multer');
 const express = require('express');
@@ -38,10 +39,10 @@ app.use(
     express.urlencoded({ extended: false }), //parse url-encoded bodies
     express.static(path.join(__dirname, 'public')), //serve static files from the "public" directory
     session({
-        secret: 'TbDwE2JH5jWsN6uPzFhYp',
+        secret: process.env.SECURITY_KEY,
         resave: false,
         saveUninitialized: true,
-        cookie: { secure: false }
+        cookie: { secure: true }
     })
 );
 
@@ -169,7 +170,8 @@ app.get('/logout', requireLogin, (req, res) => {
 });
 
 //start the server
-app.listen(port, () => console.log(`Server running on http://localhost:${port}/home`));
+module.exports = app;
+// app.listen(port, () => console.log(`Server running on http://localhost:${port}/home`));
 
 //--------------------  START OF MY FUNCTIONS  --------------------//
 function capitalize(text) {
