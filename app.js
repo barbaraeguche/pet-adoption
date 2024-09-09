@@ -16,7 +16,6 @@ const upload = multer( {storage: storage} );
 const { MongoClient, Binary } = require('mongodb');
 const mongoDB = process.env.MONGODB_URI;
 const client = new MongoClient(mongoDB);
-const db = client.db(process.env.MONGODB_DB_URI);
 
 async function connectToMongoDB() {
     try {
@@ -39,7 +38,7 @@ app.use(
     express.urlencoded({ extended: false }), //parse url-encoded bodies
     express.static(path.join(__dirname, 'public')), //serve static files from the "public" directory
     session({
-        secret: process.env.SECURITY_KEY,
+        secret: process.env.SECRET_KEY,
         resave: false,
         saveUninitialized: true,
         cookie: { secure: true }
@@ -65,6 +64,7 @@ app.post('/findpet', async (req, res) => {
     const age = body['age'], breed = body['breed'], gender = body['gender'], symbiosis = capitalize(body['symbiosis']), type = body['type'];
 
     try {
+        const db = client.db(process.env.MONGODB_DB);
         const collection = await db.collection(process.env.MONGODB_PET_INFO);
 
         const query = {
@@ -95,6 +95,7 @@ app.post('/rehome', upload.single('image'), async (req, res) => {
     const body = req.body;
 
     try {
+        const db = client.db(process.env.MONGODB_DB);
         const collection = await db.collection(process.env.MONGODB_PET_INFO);
 
         const imageBuffer = req.file? req.file.buffer : null;
@@ -129,6 +130,7 @@ app.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
     try {
+        const db = client.db(process.env.MONGODB_DB);
         const collection = await db.collection(process.env.MONGODB_USER_INFO);
 
         const findUser = await collection.findOne( {username: username}, {projection: {_id: false} } );
