@@ -15,7 +15,7 @@ const upload = multer( {storage: storage} );
 //database
 const { MongoClient, Binary } = require('mongodb');
 const mongoDB = process.env.MONGODB_URI;
-const client = new MongoClient(mongoDB);
+const client = new MongoClient(mongoDB, { tls: true });
 
 async function connectToMongoDB() {
     try {
@@ -42,7 +42,7 @@ app.use(
         resave: false,
         saveUninitialized: true,
         cookie: { secure: true }
-    })
+    }),
 );
 
 //render pages
