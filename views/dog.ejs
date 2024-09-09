@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/care.css">
+	<title>Dog Care</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Dog Care</h3>
+			<div class="parent">
+				<div class="child-2">
+					<article>
+						<h3>Nutrition</h3>
+						<p>
+							&ndash; Feed a balanced diet suitable for your dog's age, size, and activity level. <br>
+							&ndash; Offer high-quality commercial dog food or a vet-approved homemade diet. <br>
+							&ndash; Provide fresh water at all times. <br>
+							&ndash; Avoid feeding table scraps and toxic foods like chocolate, onions, garlic, and grapes.
+						</p>
+					</article>
+					<article>
+						<h3>Exercise</h3>
+						<p>
+							&ndash; Regular exercise is crucial for a dog's physical and mental well-being. <br>
+							&ndash; Walk your dog daily, adjusting the duration and intensity based on their breed and age. <br>
+							&ndash; Engage in interactive play sessions such as fetch, tug-of-war, or agility training. <br>
+							&ndash; Provide opportunities for off-leash play in safe, enclosed areas.
+						</p>
+					</article>
+					<article>
+						<h3>Mental Stimulation</h3>
+						<p>
+							&ndash; Provide a variety of toys that encourage physical activity and mental stimulation. <br>
+							&ndash; Rotate toys regularly to prevent boredom. <br>
+							&ndash; Engage in training sessions to challenge your dog's mind and reinforce obedience. <br>
+							&ndash; Offer food puzzles or interactive feeders to keep them mentally engaged and prevent boredom.
+						</p>
+					</article>
+					<article>
+						<h3>Health Care</h3>
+						<p>
+							&ndash; Schedule regular veterinary check-ups for vaccinations, parasite prevention, and overall health assessment. <br>
+							&ndash; Spay or neuter your dog to prevent unwanted litters and certain health problems. <br>
+							&ndash; Keep up with flea, tick, and heartworm prevention treatments. <br>
+							&ndash; Maintain dental hygiene by brushing your dog's teeth regularly and providing dental chews or toys. <br>
+							&ndash; Monitor for signs of illness or injury and seek veterinary care promptly.
+						</p>
+					</article>
+				</div>
+				<article>
+					<h3>Training and Socialization</h3>
+					<p>
+						&ndash; Start training early using positive reinforcement techniques. <br>
+						&ndash; Teach basic obedience commands like sit, stay, come, and leash manners. <br>
+						&ndash; Socialize your dog with people, other dogs, and different environments to prevent behavioral issues. <br>
+						&ndash; Consider enrolling in obedience classes or hiring a professional trainer if needed.
+					</p>
+				</article>
+			</div>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/forms.css">
+	<title>Register</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Register</h3>
+			<div class="form-container">
+				<form id="petForm" action="/register" method="post">
+					<!-- username -->
+					<label for="log-name">Username:</label>
+					<div class="input-style">
+						<input type="text" id="log-name" name="username" pattern="^[A-Za-z0-9]+$" title="Username can contain letters (both upper and lower case) and digits only." required>
+					</div>
+					
+					<!-- password -->
+					<label for="log-pass">Password:</label>
+					<div class="input-style">
+						<input type="password" id="log-pass" name="password" pattern="^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z0-9]{4,}$" title="Password must be at least 4 characters long (characters are to be letters and digits only), have at least one letter and at least one digit." required>
+					</div>
+					
+					<!-- register -->
+					<div class="sub-res">
+						<input type="submit" id="submitPetForm" value="Login / Register">
+					</div>
+				</form>
+			</div>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>

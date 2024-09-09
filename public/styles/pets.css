@@ -1,0 +1,99 @@
+
+main .heading-title {
+    margin: 2em 0;
+    padding: 1em 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px var(--head-border);
+}
+
+main .pets {
+    gap: 3em 0;
+    display: flex;
+    margin: 45px;
+    padding: 40px;
+    align-items: center;
+    flex-direction: column;
+}
+main .user {
+    text-align: center;
+}
+
+.pets .pet {
+    width: 75%;
+    display: flex;
+    position: relative;
+    border-radius: 15px;
+    border: 1px solid black;
+    justify-content: space-between;
+    background-color: var(--bg-txt);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.pets .pet:hover {
+    box-shadow: 0 6px 12px 0 var(--hover);
+}
+.pic-right:hover {
+    transform: translate(3px, -3px);
+}
+.pic-left:hover {
+    transform: translate(-3px, -3px);
+}
+
+.pet img {
+    width: 20em;
+    height: 20em;
+}
+.pic-right img {
+    border-radius: 0 15px 15px 0;
+}
+.pic-left img {
+    border-radius: 15px 0 0 15px;
+}
+
+.pet .pet-meta {
+    width: 60%;
+    display: flex;
+    text-align: justify;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.pet .pet-meta h4 {
+    text-align: center;
+}
+.pet .pet-meta > p {
+    padding: 2em;
+}
+
+.pet button {
+    padding: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: var(--bg-txt);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.pet button:hover {
+    box-shadow: 0 3px 6px 0 var(--hover);
+}
+.pet button:active {
+    color: whitesmoke;
+    transform: translateY(2px);
+    background-color: var(--bg-btn);
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.4);
+}
+
+.left {
+    top: 15px;
+    left: -50px;
+}
+.right {
+    top: 15px;
+    right: -50px;
+}

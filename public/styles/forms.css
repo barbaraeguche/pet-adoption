@@ -1,0 +1,129 @@
+
+main .heading-title {
+    margin: 2em 0;
+    padding: 1em 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px var(--head-border);
+}
+
+.form-container {
+    width: 50%;
+    display: flex;
+    padding: 40px;
+    margin: 5em auto 10em;
+    position: relative;
+    border-radius: 15px;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: var(--bg-txt);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    transition: box-shadow 0.2s ease-in-out;
+}
+.form-container:hover {
+    box-shadow: 0 6px 12px 0 var(--hover);
+}
+
+form {
+    width: 100%;
+}
+
+span, label[for="text"], label[for*="own"], label[for*="cli"],
+label[for*="log"], label[for="name"], label[for="breed"], label[for="file"] {
+    display: block;
+    margin: 0 0 3px 0;
+}
+span:not(:first-child), label[for*="log"]:not(:first-child), label[for*="own"],
+label[for*="reason"], label[for="image"], label[for="breed"], label[for="text"] {
+    margin: 1em 0 2px 0;
+}
+span::after, label[for*="own"]::after, label[for*="cli"]::after, label[for="text"]::after,
+label[for*="log"]::after, label[for="name"]::after, label[for="breed"]::after, label[for="image"]::after {
+    content: "*";
+    color: orangered;
+}
+
+input[type="file"] {
+    display: none;
+}
+label[for="image"] {
+    display: flex;
+    padding: 8px;
+    color: black;
+    cursor: pointer;
+    margin-top: 2.32em;
+    border-radius: 10px;
+    justify-content: center;
+    border: 1px solid var(--head-border);
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+label[for="image"]:hover {
+    background-color: var(--bg-btn);
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.4);
+}
+label[for="image"]:active {
+    color: whitesmoke;
+}
+
+.parent-2, .parent-3, .parent-4 {
+    display: grid;
+    gap: 0.5em 1em;
+}
+.parent-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.parent-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.parent-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.input-style {
+    padding: 5px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--head-border);
+    transition: box-shadow 0.2s ease-in-out;
+}
+.input-style:hover {
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.input-style > input[type="text"], input[type="email"], input[type="password"], textarea {
+    width: 100%;
+    resize: none;
+    border: none;
+    padding: 0.25em;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.sub-res {
+    gap: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.sub-res input {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid var(--head-border);
+    background-color: var(--bg-txt);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.sub-res input:hover {
+    box-shadow: 0 3px 6px 0 var(--hover);
+}
+.sub-res input:active {
+    color: whitesmoke;
+    transform: translateY(2px);
+    background-color: var(--bg-btn);
+    box-shadow: 0 6px 12px 0 rgba(0,0,0,0.4);
+}

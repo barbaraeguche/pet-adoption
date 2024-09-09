@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/home_signin.css">
+	<title>Register</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Registration Statement</h3>
+			<p class="user">The user <%= returnMsg.name %> <%= returnMsg.msg %></p>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+
+main > .heading-title {
+    margin: 2em 0;
+    padding: 1em 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px var(--head-border);
+}
+
+.parent {
+    gap: 3em;
+    display: flex;
+    padding: 40px;
+    margin: 0 45px 45px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.child-2 {
+    gap: 3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+article {
+    display: flex;
+    padding: 30px;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--bg-txt);
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+article:hover {
+    box-shadow: 0 6px 12px 0 var(--hover);
+}
+
+article h3 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+article p {
+    width: 100%;
+    text-align: justify;
+}

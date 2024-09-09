@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/forms.css">
+	<link rel="stylesheet" type="text/css" href="/styles/pets.css">
+	<title>Find A Pet</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Find A Pet</h3>
+			<div class="form-container">
+				<form id="petForm" action="/findpet" method="post">
+					<!-- pet type -->
+					<span>Pet Type:</span>
+					<div class="parent-2">
+						<div class="input-style">
+							<input type="radio" id="cat" value="cat" name="type">
+							<label for="cat">Cat</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="dog" value="dog" name="type">
+							<label for="dog">Dog</label>
+						</div>
+					</div>
+					
+					<!-- pet breed -->
+					<label for="breed">Pet Breed:</label>
+					<div class="input-style">
+						<input type="text" id="breed" name="breed" required>
+					</div>
+					
+					<!-- pet age -->
+					<span>Pet Age:</span>
+					<div class="parent-3">
+						<div class="input-style">
+							<input type="radio" id="puppy" value="puppy" name="age">
+							<label for="puppy">Puppy(0 - 2)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="young" value="young" name="age">
+							<label for="young">Young(3 - 5)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="adult" value="adult" name="age">
+							<label for="adult">Adult(6 - 8)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="senior" value="senior" name="age">
+							<label for="senior">Senior(> 8)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="noage" value="noage" name="age">
+							<label for="noage">Doesn't matter</label>
+						</div>
+					</div>
+					
+					<!-- pet gender -->
+					<span>Pet Gender:</span>
+					<div class="parent-3">
+						<div class="input-style">
+							<input type="radio" id="male" value="male" name="gender">
+							<label for="male">Male</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="female" value="female" name="gender">
+							<label for="female">Female</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="nogender" value="nogender" name="gender">
+							<label for="nogender">Doesn't matter</label>
+						</div>
+					</div>
+					
+					<!-- pet compatibility -->
+					<span>Pet compatibility with other animals/kids?:</span>
+					<div class="parent-3">
+						<div class="input-style">
+							<input type="checkbox" id="cats" value="cats" name="symbiosis">
+							<label for="cats">Cats</label>
+						</div>
+						<div class="input-style">
+							<input type="checkbox" id="dogs" value="dogs" name="symbiosis">
+							<label for="dogs">Dogs</label>
+						</div>
+						<div class="input-style">
+							<input type="checkbox" id="kids" value="kids" name="symbiosis">
+							<label for="kids">Small Kids</label>
+						</div>
+					</div>
+					
+					<!-- submit, clear -->
+					<div class="sub-res">
+						<input type="submit" id="submitPetForm" value="Find Pet" onclick="validateFindPet(event)">
+						<input type="reset" id="clearPetForm" value="Clear Form">
+					</div>
+				</form>
+			</div>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/pets.css">
+	<link rel="stylesheet" type="text/css" href="/styles/home_signin.css">
+	<title>Browse Available Pets</title>
+</head>
+<body onload="localTime()">
+<div id="page">
+	<!-- header -->
+	<%- include('common/header.ejs') %>
+	
+	<!-- side menu -->
+	<%- include('common/navbar.ejs') %>
+	
+	<!-- main content -->
+	<main>
+		<h3 class="heading-title">Matched Pets</h3>
+		<div class="pets">
+			<% if(validPets.msg) { %>
+				<p class="user"><%= validPets.msg %></p>
+			<% } else { %>
+				<% validPets.pets.forEach((pet, index) => { %>
+					<div class="pet <%= (index % 2 === 0)? 'pic-left' : 'pic-right' %>">
+						<% if(index % 2 === 0) { %>
+							<img src="<%= pet.image %>" alt="<%= pet.name %>">
+						<% } %>
+						<div class="pet-meta">
+							<h4><%= pet.name %></h4>
+							<p>
+								<b>Pet Type:</b> <%= pet.type %> <br>
+								<b>Pet Breed:</b> <%= pet.breed %> <br>
+								<b>Pet Age:</b> <%= pet.age %> <br>
+								<b>Pet Gender:</b> <%= pet.gender %> <br>
+								<b>Pet Compatibility:</b> <%= pet.symbiosis %> <br>
+								<b>Pet Info:</b> <%= pet.desc %>
+							</p>
+						</div>
+						<% if(index % 2 !== 0) { %>
+							<img src="<%= pet.image %>" alt="<%= pet.name %>">
+						<% } %>
+						<button class="interested <%= (index % 2 === 0)? 'right' : 'left' %>">Interested</button>
+					</div>
+				<% }); %>
+			<% } %>
+		</div>
+	</main>
+	
+	<!-- footer -->
+	<%- include('common/footer.ejs') %>
+</div>
+<script src="/scripts/index.js"></script>
+</body>
+</html>

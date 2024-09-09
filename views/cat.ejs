@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/care.css">
+	<title>Cat Care</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Cat Care</h3>
+			<div class="parent">
+				<div class="child-2">
+					<article>
+						<h3>Nutrition</h3>
+						<p>
+							&ndash; Provide a balanced diet rich in protein, essential fatty acids, vitamins, and minerals. <br>
+							&ndash; Choose high-quality cat food formulated for their life stage (kitten, adult, senior). <br>
+							&ndash; Ensure access to fresh water at all times. <br>
+							&ndash; Avoid feeding toxic foods like chocolate, onions, garlic, and grapes.
+						</p>
+					</article>
+					<article>
+						<h3>Shelter</h3>
+						<p>
+							&ndash; Provide a safe, warm, and comfortable indoor environment. <br>
+							&ndash; Offer a cozy bed or resting area. <br>
+							&ndash; Create vertical spaces like cat trees for climbing and perching. <br>
+							&ndash; Provide scratching posts to satisfy their natural urge to scratch.
+						</p>
+					</article>
+					<article>
+						<h3>Health Care</h3>
+						<p>
+							&ndash; Schedule regular veterinary check-ups for vaccinations, deworming, and overall health assessment. <br>
+							&ndash; Spay or neuter your cat to prevent unwanted pregnancies and health issues. <br>
+							&ndash; Keep up with flea and tick prevention treatments. <br>
+							&ndash; Monitor their dental health and brush their teeth regularly. <br>
+							&ndash; Be aware of signs of illness and seek prompt veterinary care if needed.
+						</p>
+					</article>
+					<article>
+						<h3>Mental Stimulation</h3>
+						<p>
+							&ndash; Provide toys that encourage physical activity and mental stimulation. <br>
+							&ndash; Rotate toys regularly to prevent boredom. <br>
+							&ndash; Spend quality time playing and interacting with your cat. <br>
+							&ndash; Consider puzzle feeders or food-dispensing toys to keep them mentally engaged.
+						</p>
+					</article>
+				</div>
+				<article>
+					<h3>Litter Box Care</h3>
+					<p>
+						&ndash; Provide a clean litter box in a quiet, easily accessible location. <br>
+						&ndash; Scoop the litter box daily and change the litter completely every 1-2 weeks. <br>
+						&ndash; Use unscented, clumping litter that your cat prefers. <br>
+						&ndash; Ensure multiple litter boxes in multi-cat households.
+					</p>
+				</article>
+			</div>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>

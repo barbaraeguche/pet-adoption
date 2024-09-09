@@ -1,0 +1,40 @@
+
+main .section {
+    margin: 45px;
+    display: grid;
+}
+
+.section > article {
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 35px 0 30px 35px;
+}
+article img {
+    height: 20em;
+    width: 20em;
+}
+
+article .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: center;
+}
+article .text h4 {
+    text-align: center;
+}
+
+/* SIGN IN */
+main .heading-title {
+    margin: 2em 0;
+    padding: 1em 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px var(--head-border);
+}
+
+main .user {
+    text-align: center;
+}

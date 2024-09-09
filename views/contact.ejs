@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/forms.css">
+	<title>Contact Us</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Contact Us</h3>
+			<div class="form-container">
+				<form id="petForm" action="#" method="post">
+					<!-- client's full name -->
+					<div class="parent-2">
+						<div>
+							<label for="cli-flname">Full Name:</label>
+							<div class="input-style">
+								<input type="text" id="cli-flname" name="cli-flname" pattern="^[A-Za-z]+(-[A-Za-z]+)? [A-Za-z]+(-[A-Za-z]+)?$" title="Enter a valid full-name" required>
+							</div>
+						</div>
+						<div>
+							<label for="cli-email">Email:</label>
+							<div class="input-style">
+								<input type="email" id="cli-email" name="cli-email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter a valid email" required>
+							</div>
+						</div>
+					</div>
+					
+					<!-- contact reason -->
+					<label for="cli-reason">Contact Reason:</label>
+					<div class="input-style">
+						<input type="text" id="cli-reason" name="cli-reason" required>
+					</div>
+					
+					<!-- comment area -->
+					<label for="text">What can we help you with?</label>
+					<div class="input-style">
+						<textarea name="text" id="text" rows="4" cols="30" maxlength="300" required></textarea>
+					</div>
+					
+					<!-- submit -->
+					<div class="sub-res">
+						<input type="submit" id="submitPetForm" value="Contact">
+					</div>
+				</form>
+			</div>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>

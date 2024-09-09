@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/assets/logo.png">
+	<link rel="stylesheet" type="text/css" href="/styles/main.css">
+	<link rel="stylesheet" type="text/css" href="/styles/forms.css">
+	<title>Rehome Your Beloved Pet</title>
+</head>
+<body onload="localTime()">
+	<div id="page">
+		<!-- header -->
+		<%- include('common/header.ejs') %>
+		
+		<!-- side menu -->
+		<%- include('common/navbar.ejs') %>
+		
+		<!-- main content -->
+		<main>
+			<h3 class="heading-title">Rehome Your Pet</h3>
+			<div class="form-container">
+				<form id="petForm" action="/rehome" method="post" enctype="multipart/form-data">
+					<!-- pet name, breed -->
+					<label for="name">Pet Name:</label>
+					<div class="input-style">
+						<input type="text" id="name" name="name" pattern="^[A-Za-z]+$" title="Enter a single pet name" required>
+					</div>
+					
+					<!-- pet breed, file -->
+					<div class="parent-2">
+						<div>
+							<label for="breed">Pet Breed:</label>
+							<div class="input-style">
+								<input type="text" id="breed" name="breed" required>
+							</div>
+						</div>
+						<div>
+							<label for="image">upload pet image</label>
+							<input type="file" id="image" name="image" required>
+						</div>
+					</div>
+					
+					<!-- pet type -->
+					<span>Pet Type:</span>
+					<div class="parent-2">
+						<div class="input-style">
+							<input type="radio" id="cat" value="cat" name="type">
+							<label for="cat">Cat</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="dog" value="dog" name="type">
+							<label for="dog">Dog</label>
+						</div>
+					</div>
+					
+					<!-- pet age -->
+					<span>Pet Age:</span>
+					<div class="parent-4">
+						<div class="input-style">
+							<input type="radio" id="puppy" value="puppy" name="age">
+							<label for="puppy">Puppy(0 - 2)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="young" value="young" name="age">
+							<label for="young">Young(3 - 5)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="adult" value="adult" name="age">
+							<label for="adult">Adult(6 - 8)</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="senior" value="senior" name="age">
+							<label for="senior">Senior(> 8)</label>
+						</div>
+					</div>
+					
+					<!-- pet gender -->
+					<span>Pet Gender:</span>
+					<div class="parent-2">
+						<div class="input-style">
+							<input type="radio" id="male" value="male" name="gender">
+							<label for="male">Male</label>
+						</div>
+						<div class="input-style">
+							<input type="radio" id="female" value="female" name="gender">
+							<label for="female">Female</label>
+						</div>
+					</div>
+					
+					<!-- pet compatibility -->
+					<span>Pet compatibility with other animals/kids?:</span>
+					<div class="parent-3">
+						<div class="input-style">
+							<input type="checkbox" id="cats" value="cats" name="symbiosis">
+							<label for="cats">Cats</label>
+						</div>
+						<div class="input-style">
+							<input type="checkbox" id="dogs" value="dogs" name="symbiosis">
+							<label for="dogs">Dogs</label>
+						</div>
+						<div class="input-style">
+							<input type="checkbox" id="kids" value="kids" name="symbiosis">
+							<label for="kids">Small Kids</label>
+						</div>
+					</div>
+					
+					<!-- comment area -->
+					<label for="text">Tell us more about your pet:</label>
+					<div class="input-style">
+						<textarea name="text" id="text" rows="4" cols="30" maxlength="300" required></textarea>
+					</div>
+					
+					<!-- owner's full name, email -->
+					<div class="parent-3">
+						<div>
+							<label for="own-fname">First Name:</label>
+							<div class="input-style">
+								<input type="text" id="own-fname" name="own-fname" pattern="^[A-Za-z]+(-[A-Za-z]+)?$" title="Enter a valid first name" required>
+							</div>
+						</div>
+						<div>
+							<label for="own-lname">Last Name:</label>
+							<div class="input-style">
+								<input type="text" id="own-lname" name="own-lname" pattern="^[A-Za-z]+(-[A-Za-z]+)?$" title="Enter a valid last name" required>
+							</div>
+						</div>
+						<div>
+							<label for="own-email">Email:</label>
+							<div class="input-style">
+								<input type="email" id="own-email" name="own-email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter a valid email" required>
+							</div>
+						</div>
+					</div>
+					
+					<!-- submit, clear -->
+					<div class="sub-res">
+						<input type="submit" id="submitPetForm" value="Rehome Pet" onclick="validateRehomePet(event)">
+						<input type="reset" id="clearPetForm" value="Clear Form">
+					</div>
+				</form>
+			</div>
+		</main>
+		
+		<!-- footer -->
+		<%- include('common/footer.ejs') %>
+	</div>
+	<script src="/scripts/index.js"></script>
+</body>
+</html>
