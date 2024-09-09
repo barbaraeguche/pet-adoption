@@ -64,7 +64,7 @@ app.post('/findpet', async (req, res) => {
     const age = body['age'], breed = body['breed'], gender = body['gender'], symbiosis = capitalize(body['symbiosis']), type = body['type'];
 
     try {
-        const collection = db.collection('pet-info');
+        const collection = await db.collection(process.env.MONGODB_PET_INFO);
 
         const query = {
             age: age === 'noage'? {$exists: true} : {$regex: `^${age}$`, $options: 'i'},
@@ -94,7 +94,7 @@ app.post('/rehome', upload.single('image'), async (req, res) => {
     const body = req.body;
 
     try {
-        const collection = db.collection('pet-info');
+        const collection = await db.collection(process.env.MONGODB_PET_INFO);
 
         const imageBuffer = req.file? req.file.buffer : null;
         const imageBinary = imageBuffer? new Binary(imageBuffer) : null;
@@ -128,7 +128,7 @@ app.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const collection = db.collection('users');
+        const collection = await db.collection(process.env.MONGODB_USER_INFO);
 
         const findUser = await collection.findOne( {username: username}, {projection: {_id: false} } );
 
