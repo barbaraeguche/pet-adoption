@@ -26,10 +26,6 @@ const client = new MongoClient(mongoDB, {
 async function connectToMongoDB() {
     try {
         await client.connect();
-        const data = await client.db('pets');
-        const coll = await data.collection('users');
-        
-        console.log(coll.find({}));
         console.log('Connected to MongoDB');
     } catch (error) {
         console.error('Error connecting to MongoDB', error);
