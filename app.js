@@ -13,9 +13,15 @@ const storage = multer.memoryStorage();
 const upload = multer( {storage: storage} );
 
 //database
-const { MongoClient, Binary } = require('mongodb');
+const { MongoClient, Binary, ServerApiVersion } = require('mongodb');
 const mongoDB = process.env.MONGODB_URI;
-const client = new MongoClient(mongoDB, { tls: true });
+const client = new MongoClient(mongoDB, {
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    }
+});
 
 async function connectToMongoDB() {
     try {
