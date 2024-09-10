@@ -64,7 +64,7 @@ app.post('/findpet', async (req, res) => {
     const age = body['age'], breed = body['breed'], gender = body['gender'], symbiosis = capitalize(body['symbiosis']), type = body['type'];
 
     try {
-        const db = client.db(process.env.MONGODB_DB);
+        const db = await client.db(process.env.MONGODB_DB);
         const collection = await db.collection(process.env.MONGODB_PET_INFO);
 
         const query = {
@@ -95,7 +95,7 @@ app.post('/rehome', upload.single('image'), async (req, res) => {
     const body = req.body;
 
     try {
-        const db = client.db(process.env.MONGODB_DB);
+        const db = await client.db(process.env.MONGODB_DB);
         const collection = await db.collection(process.env.MONGODB_PET_INFO);
 
         const imageBuffer = req.file? req.file.buffer : null;
@@ -130,7 +130,7 @@ app.post('/register', async (req, res) => {
     const { username, password } = req.body;
 
     try {
-        const db = client.db(process.env.MONGODB_DB);
+        const db = await client.db(process.env.MONGODB_DB);
         const collection = await db.collection(process.env.MONGODB_USER_INFO);
 
         const findUser = await collection.findOne( {username: username}, {projection: {_id: false} } );
@@ -172,7 +172,7 @@ app.get('/logout', requireLogin, (req, res) => {
 });
 
 //start the server
-module.exports = app;
+// module.exports = app;
 // app.listen(port, () => console.log(`Server running on http://localhost:${port}/home`));
 
 //--------------------  START OF MY FUNCTIONS  --------------------//
